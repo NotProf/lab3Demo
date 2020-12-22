@@ -4,10 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Sum sum = new Sum();
         Product product = new Product();
+        Thread thread = new Thread(product);
         System.out.println("ACTIVE THREADS - " + Thread.activeCount());
         sum.start();
         System.out.println("ACTIVE THREADS - " + Thread.activeCount());
-        product.run();
+        thread.start();
+        System.out.println("ACTIVE THREADS - " + Thread.activeCount());
 
     }
 }
